@@ -1,16 +1,19 @@
+//20201008 T.I. Added sample for servo control
 //20201008 T.I. Created this file. Based on https://www.tinkercad.com/things/aaHqTYZCYRm
 
 #include <Servo.h>
-Servo motor;
+Servo servo_0;
 int KEY_0 = 3;
 int KEY_1 = 4;
+int pin_s0 = 9;
+
 
 void setup()
 {
 
   pinMode(KEY_0, INPUT_PULLUP);
   pinMode(KEY_1, INPUT_PULLUP);
-  motor.attach(2);
+  servo_0.attach(pin_s0);
  
 
 }
@@ -22,14 +25,14 @@ void loop()
     
   if (digitalRead(KEY_0) == 0 )
   {
-    
+    servo_0.write(180);
   }
   else
   {
-
+    servo_0.write(0);
   }
 
-  if (digitalRead(KEY_1) == 0);
+  if (digitalRead(KEY_1) == 0)
   {
   
   }
